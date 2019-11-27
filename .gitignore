@@ -24,3 +24,10 @@ yarn-error.log*
 
 .idea
 .idea/
+.idea/.gitignore
+.idea/inspectionProfiles/
+.idea/misc.xml
+.idea/modules.xml
+.idea/rent-car.iml
+.idea/vcs.xml
+
