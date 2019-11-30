@@ -21,10 +21,13 @@
 // 4. Layout-related sections
 @import
   "layout/header",
+  "layout/grid",
   "layout/footer";
 
 // 5. Components
 @import
+  "components/form",
+  "components/cars",
   "components/button";
 
 // 6. Page-specific styles

@@ -1,0 +1,19 @@
+.input-wrapper{
+  display: inline-flex;
+  margin: 0 20px;
+  align-items: center;
+  label{
+    margin-right: 10px;
+    line-height: 1px;
+    vertical-align: middle;
+  }
+  input{
+
+  }
+}
+
+.filters{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}

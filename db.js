@@ -3,8 +3,8 @@ var faker = require('faker');
 module.exports = () => {
   const data = { cars: []};
 
-  for (let i = 0; i < 10; i++) {
-    let date = new Date(faker.date.past());
+  for (let i = 0; i < 6; i++) {
+    let date = new Date(faker.date.between('2015-01-01', '2018-12-31'));
 
     data.cars.push(
         {

@@ -16,25 +16,27 @@ function App() {
 
     useEffect(() => {
 
-        let params = {};
+        const getCars = async (speed, year, price) => {
 
-        if (is_set(speed)) {
-            params.speeds = speed;
+            let params = {};
+
+            if (is_set(speed)) {
+                params.speeds = speed;
+            }
+
+            if (is_set(year)) {
+                params.year_gte = year;
+            }
+
+            if (is_set(price)) {
+                params.price_gte = price;
+            }
+
+            let cars = await axios.get('http://localhost:3001/cars', {params});
+            setProducts(cars.data)
         }
 
-        if (is_set(year)) {
-            params._gte_year = year;
-        }
-
-        if (is_set(price)) {
-            params._gte_price = price;
-        }
-
-        axios.get('http://localhost:3001/cars', {
-            params,
-        }).then((data) => {
-            setProducts(data.data)
-        })
+        getCars(speed, year, price);
 
     }, [speed, year, price]);
 
@@ -44,7 +46,7 @@ function App() {
     return (
         <div className="cars-app">
             <header className="header">
-                <h2>Car Rental</h2>
+                <h2 className={'header-title'}>Car Rental</h2>
             </header>
             <main>
                 <form className={'filters'}>
@@ -66,12 +68,8 @@ function App() {
 
                 </form>
 
-                <div className="cars">
+                <div className="container">
                     {_products}
-                </div>
-
-                <div className="pagination">
-                    Pagination
                 </div>
             </main>
         </div>
